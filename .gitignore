@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+*.egg-info/
+tests/
+
+# NapCat/QQ is a local runtime installation (hundreds of MB), not source code.
+NapCat/

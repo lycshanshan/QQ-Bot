@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qq-bot"
+version = "0.1.0"
+description = "A small NoneBot2 bot connected to NapCatQQ through OneBot v11."
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "nonebot2[fastapi]>=2.4,<3",
+    "nonebot-adapter-onebot>=2.4,<3",
+    "python-dotenv>=1,<2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8,<10",
+]
+
+[project.scripts]
+qq-bot = "bot.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["bot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
