@@ -1,0 +1,23 @@
+# Design artifact only. The current minimal bot does not load this file yet.
+# In the planned implementation, copy to policy.toml and update it atomically.
+schema_version = 1
+revision = 1
+
+[quota]
+default_user_daily_limit = 20
+charge_per_successful_request = 1
+charge_advanced_task_extra = 0
+charge_provider_failure = false
+charge_cancel_before_generation = false
+charge_cancel_after_generation = true
+
+# Proposed reset boundary; confirm during implementation review.
+reset_timezone = "Asia/Shanghai"
+reset_hour = 0
+
+# Persistent per-user daily limits, managed by admin/superuser commands.
+# Example: "123456789" = 30
+[quota.user_daily_limits]
+
+# Actual daily usage, reservations and one-day grants belong in SQLite.
+# VIP/admin/superuser bypass this business count, but retain resource limits.

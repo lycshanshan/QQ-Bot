@@ -10,7 +10,19 @@ __pycache__/
 .ruff_cache/
 *.log
 *.egg-info/
-tests/
 
 # NapCat/QQ is a local runtime installation (hundreds of MB), not source code.
 NapCat/
+
+# Local feasibility captures, login state, SDK sandbox and test media.
+artifacts/
+
+# Deployed, command-managed policy; keep the example under version control.
+config/policy.toml
+
+# Local runtime configuration overrides.
+config.toml
+
+# Agent task contents may contain private inputs and generated artifacts.
+agent-workspace/*
+!agent-workspace/README.md

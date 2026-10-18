@@ -1,0 +1,54 @@
+# Copy to config.toml for local overrides. Runtime state stays in SQLite.
+[storage]
+database = "artifacts/runtime/bot.sqlite3"
+archives = "artifacts/runtime/archives"
+message_window = 1000
+archive_batch = 1000
+
+[bot]
+timezone = "Asia/Shanghai"
+echo_max_chars = 1000
+command_interval = 1.0
+send_interval = 1.0
+
+[checkin]
+max_delay_seconds = 300
+
+# IDs are permanent collection keys. Renaming an ID creates a new collectible.
+[[checkin.copies]]
+id = "morning_common"
+period = "morning"
+text = "早安！新的一天也要好好生活。"
+weight = 90
+
+[[checkin.copies]]
+id = "morning_rare"
+period = "morning"
+text = "早安喵！今天的幸运已经送达。"
+weight = 10
+
+[[checkin.copies]]
+id = "night_common"
+period = "night"
+text = "晚安，愿你今晚睡个好觉。"
+weight = 90
+
+[[checkin.copies]]
+id = "night_rare"
+period = "night"
+text = "晚安喵！送你一颗好梦星星。"
+weight = 10
+
+[ai]
+enabled = true
+concurrency = 2
+queue_limit = 20
+timeout_seconds = 120
+queue_timeout_seconds = 300
+history_limit = 20
+daily_requests = 500
+daily_tokens = 2000000
+input_chars = 24000
+
+[subscriptions]
+enabled = true

@@ -12,6 +12,12 @@ dependencies = [
     "nonebot2[fastapi]>=2.4,<3",
     "nonebot-adapter-onebot>=2.4,<3",
     "python-dotenv>=1,<2",
+    "tzdata>=2025.2",
+    "openai-codex==0.162.1",
+    "markdown-it-py>=3,<5",
+    "mdit-py-plugins>=0.5,<1",
+    "playwright>=1.50,<2",
+    "paramiko>=3.5,<5",
 ]
 
 [project.optional-dependencies]
@@ -28,3 +34,5 @@ include = ["bot*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
+[tool.setuptools.package-data]
+bot = ["ai/skills/main/SKILL.md"]
